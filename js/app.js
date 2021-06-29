@@ -5,12 +5,13 @@ function random(min, max) {
 }
 
 let workingHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', 
-'5pm', '6pm', '7pm', '8pm'];
+'5pm', '6pm', '7pm'];
 
 
    let parentElement = document.getElementById("parent")
    let tableElement = document.createElement('table');
    parentElement.appendChild(tableElement);
+   let arrayShop =[];
 
 
   
@@ -22,6 +23,7 @@ function SalomnCookies(LocationName, minCust, mixCust ,	AvgCookieSale) {
   this.customerPerHoure=[];
   this.cookiesPerHoure=[];
   this.total=0;
+  arrayShop.push(this);
 
 }
 
@@ -58,18 +60,18 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
   
   }
 
-  Seattle.clcCustomerPerHouer();
-   console.log(Tokyo.clcCustomerPerHouer());
-   console.log(Dubai.clcCustomerPerHouer());
-   console.log(Paris.clcCustomerPerHouer());
-   console.log(Lima.clcCustomerPerHouer());
+   Seattle.clcCustomerPerHouer();
+   Tokyo.clcCustomerPerHouer();
+   Dubai.clcCustomerPerHouer();
+   Paris.clcCustomerPerHouer();
+   Lima.clcCustomerPerHouer();
 
 
-   console.log(Seattle.clcCookiesPerHoure());
-   console.log(Tokyo.clcCookiesPerHoure());
-   console.log(Dubai.clcCookiesPerHoure());
-   console.log(Paris.clcCookiesPerHoure());
-   console.log(Lima.clcCookiesPerHoure());
+   Seattle.clcCookiesPerHoure();
+   Tokyo.clcCookiesPerHoure();
+   Dubai.clcCookiesPerHoure();
+   Paris.clcCookiesPerHoure();
+   Lima.clcCookiesPerHoure();
 
 
 
@@ -106,6 +108,9 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
     th2.textContent=workingHours[i];
 
   }
+  let tdHeader=document.createElement('th');
+  headerRow.appendChild(tdHeader);
+  tdHeader.textContent='Daily Location Total';
 } 
    tableHeader();
    Seattle.render();
@@ -115,8 +120,34 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
    Lima.render();
 
 
-  //  lab7 is done
-  // dina
+function totalOfTotal(){
+  let row= document.createElement('tr');
+  tableElement.appendChild(row);
+  let fistTd = document.createElement('td');
+  row.appendChild(fistTd);
+  fistTd.textContent='total';
+  let totFinal =0;
+  for(let i=0 ; i<workingHours.length ; i++){
+    let tot=0;
+    
+    for(let j=0 ; j<arrayShop.length ;j++){
+     let result1 =arrayShop[j].cookiesPerHoure[i];
+      tot+=result1;
+      }
+    let tdTot=document.createElement('td');
+    row.appendChild(tdTot);
+    tdTot.textContent=tot;
+    totFinal+=tot;
+  }
+  let tdFinal=document.createElement('td');
+    row.appendChild(tdFinal);
+    tdFinal.textContent=totFinal;
+
+  }
+  totalOfTotal();
+
+
+
 
 
    
