@@ -9,7 +9,7 @@ let workingHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '
 
 
 let Seattle= {
-  locationName:"seattle",
+  locationName:'seattle',
   minCust:23, 
   MaxCust : 65,
   AvgCookieSale : 6.3,
@@ -17,39 +17,41 @@ let Seattle= {
   cookiesPerHoure:[],
 
 
-  clcCustomerPerHouer: function(){
-    for(let i=0 ; i<workingHours.length ;i++)
+  clcCustomerPerHour: function(){
+    for(let i=0 ; i<workingHours.length ;i++){
   let AvergeCustomer = random( this.minCust,  this.MaxCust);
    this.customerPerHoure.push(AvergeCustomer);
   }
+},
      clcCookiesPerHoure : function(){
-        for ( let i = 0; i < workinghours.length; i++){
-           let AvgCookies  = this.CustomerPerHouer[i] * this.AvgCookieSale
+        for ( let i = 0; i < workingHours.length; i++){
+           let AvgCookies  = this.customerPerHoure[i] * this.AvgCookieSale
             this.cookiesPerHoure.push(Math.floor(AvgCookies))
         }
     },
 
     reder:function(){
-      let parent =document.getElementById("result");
-      letshopName=document.createElement("h3");
-      parent.appendChild("shopName");
+      let parent =document.getElementById('result');
+      let shopName=document.createElement('h3');
+      parent.appendChild(shopName);
       shopName.textContent=this.locationName
 
 
       let unorderList= document.createElement("ul");
-      parent.appendChild("unorderList");
+      parent.appendChild(unorderList);
 
 
       for(let i=0 ; i<workingHours.length ; i++);
       let listItem= document.createElement("li");
-      unorderList.appendChild("listItem");
+      unorderList.appendChild(listItem);
       listItem.textContent`${workingHours[i]}:${cookiesPerHoure[i]} cookies`}
 
     }
 
 
-Seattle.CustomerPerHouer();
-Seattle.cookiesPerHoure();
+    Seattle.clcCustomerPerHour();
+    Seattle.clcCookiesPerHoure();
+    Seattle.reder();
 
 
 
@@ -67,10 +69,11 @@ let Tokyo = {
 
 
   clcCustomerPerHouer: function(){
-    for(let i=0 ; i<workingHours.length ;i++)
+    for(let i=0 ; i<workingHours.length ;i++){
   let AvergeCustomer = random( this.minCust,  this.MaxCust);
    this.customerPerHoure.push(AvergeCustomer);
   }
+},
    clcCookiesPerHoure : function(){
         for ( let i = 0; i < workinghours.length; i++){
            let AvgCookies  = this.CustomerPerHouer[i] * this.AvgCookieSale
@@ -97,8 +100,8 @@ let Tokyo = {
     }
 
 
-    Tokyo.CustomerPerHouer();
-    Tokyo.cookiesPerHoure();
+    Tokyo.clcCustomerPerHouer();
+    Tokyo.clcCookiesPerHoure();
 
 
 
@@ -119,10 +122,11 @@ let Tokyo = {
 
 
  clcCustomerPerHouer: function(){
-    for(let i=0 ; i<workingHours.length ;i++)
+    for(let i=0 ; i<workingHours.length ;i++){
   let AvergeCustomer = random( this.minCust,  this.MaxCust);
    this.customerPerHoure.push(AvergeCustomer);
-  }
+    }
+  },
      clcCookiesPerHoure : function(){
         for ( let i = 0; i < workinghours.length; i++){
            let AvgCookies  = this.CustomerPerHouer[i] * this.AvgCookieSale
@@ -149,8 +153,8 @@ let Tokyo = {
     }
 
 
-    Dubai.CustomerPerHouer();
-    Dubai.cookiesPerHoure();
+    Dubai.clcCustomerPerHouer();
+    Dubai.clCookiesPerHoure();
    
 
   
@@ -167,10 +171,11 @@ let Tokyo = {
  
  
    clcCustomerPerHouer: function(){
-     for(let i=0 ; i<workingHours.length ;i++)
+     for(let i=0 ; i<workingHours.length ;i++){
     let AvergeCustomer = random( this.minCust,  this.MaxCust);
     this.customerPerHoure.push(AvergeCustomer);
     }
+  },
     clcCookiesPerHoure : function(){
          for ( let i = 0; i < workinghours.length; i++){
             let AvgCookies  = this.CustomerPerHouer[i] * this.AvgCookieSale
@@ -197,8 +202,8 @@ let Tokyo = {
      }
  
  
-     Paris.CustomerPerHouer();
-     Paris.cookiesPerHoure();
+     Paris.clcCustomerPerHouer();
+     Paris.clcCookiesPerHoure();
 
 
 
@@ -213,10 +218,11 @@ let Tokyo = {
  
  
    clcCustomerPerHouer: function(){
-     for(let i=0 ; i<workingHours.length ;i++)
+     for(let i=0 ; i<workingHours.length ;i++){
     let AvergeCustomer = random( this.minCust,  this.MaxCust);
     this.customerPerHoure.push(AvergeCustomer);
     }
+  },
     clcCookiesPerHoure : function(){
          for ( let i = 0; i < workinghours.length; i++){
             let AvgCookies  = this.CustomerPerHouer[i] * this.AvgCookieSale
@@ -243,8 +249,8 @@ let Tokyo = {
      }
  
  
-     Limas.CustomerPerHouer();
-     Lima.cookiesPerHoure();
+     Lima.clcCustomerPerHouer();
+     Lima.clcCookiesPerHoure();
 
 
 
