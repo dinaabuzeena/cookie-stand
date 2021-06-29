@@ -1,3 +1,4 @@
+
 "use strict";
 
 function random(min, max) {
@@ -155,4 +156,3 @@ function totalOfTotal(){
 
 
    
-
