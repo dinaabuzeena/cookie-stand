@@ -1,3 +1,4 @@
+
 "use strict";
 
 function random(min, max) {
@@ -124,4 +125,3 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
 
 
    
-
