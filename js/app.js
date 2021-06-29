@@ -116,6 +116,7 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
 
 
   //  lab7 is done
+  // dina
 
 
    
