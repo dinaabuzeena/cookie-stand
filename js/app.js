@@ -97,6 +97,11 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
 
    }
 
+
+
+   
+
+
    let tableHeader=function(){
     let headerRow = document.createElement('tr');
     tableElement.appendChild(headerRow);
@@ -113,16 +118,66 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
   headerRow.appendChild(tdHeader);
   tdHeader.textContent='Daily Location Total';
 } 
+
    tableHeader();
-   Seattle.render();
-   Tokyo.render();
-   Dubai.render();
-   Paris.render();
-   Lima.render();
+ 
 
 
+
+
+  
+
+
+
+
+
+  let CookieForm = document.getElementById('Cookie');
+  CookieForm.addEventListener('submit', handleSubmit);
+  
+  function handleSubmit(event){
+      event.preventDefault();
+      console.log(event);
+
+     let newNamelocation =event.target.nameField.value;
+      console.log(newNamelocation);
+
+      let newMinCust = parseInt (event.target.minField.value);
+      console.log(newMinCust );
+   
+
+      let newMixCust = parseInt (event.target.mixField.value);
+      console.log( newMixCust );
+
+
+
+      let newAvgCookieSale =parseInt (event.target.AvgField.value);
+      console.log( newAvgCookieSale );
+
+
+      const newObject = new SalomnCookies(newNamelocation, newMinCust, newMixCust ,newAvgCookieSale);
+      newObject.clcCustomerPerHouer();
+      newObject.clcCookiesPerHoure();
+      newObject.render();
+      row.innerHTML='';
+      totalOfTotal();
+  }
+  
+   
+
+
+
+
+
+for( let i=0 ;i<arrayShop.length ;i++){
+  arrayShop[i].render();
+}
+
+
+
+
+
+let row= document.createElement('tr');
 function totalOfTotal(){
-  let row= document.createElement('tr');
   tableElement.appendChild(row);
   let fistTd = document.createElement('td');
   row.appendChild(fistTd);
@@ -145,14 +200,14 @@ function totalOfTotal(){
     tdFinal.textContent=totFinal;
 
   }
-  totalOfTotal();
+
+
+totalOfTotal();
+
+  
 
 
 
 
 
-   
 
-
-
-   
