@@ -55,7 +55,7 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
       for ( let i = 0; i < workingHours.length; i++){
          let AvgCookies  = this.customerPerHoure[i] * this.AvgCookieSale
          this.total=this.total+AvgCookies
-          this.cookiesPerHoure.push(Math.floor(AvgCookies))
+          this.cookiesPerHoure.push(Math.ceil(AvgCookies))
         
       }
   
@@ -150,7 +150,7 @@ SalomnCookies.prototype.clcCustomerPerHouer= function(){
 
 
 
-      let newAvgCookieSale =parseInt (event.target.AvgField.value);
+      let newAvgCookieSale =parseFloat(event.target.AvgField.value);
       console.log( newAvgCookieSale );
 
 
