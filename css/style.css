@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 * {
     font-family: 'Open Sans Condensed', sans-serif;
   }
@@ -18,5 +18,56 @@
   table th{
     border: solid black 1px;
   }
-=======
->>>>>>> a2f931f5eb0ffc5fd206555fda6dcce32c0a630a
+
+
+
+
+
+
+h2{
+  font-family: 'Festive', cursive;
+  color: rgb(235, 192, 113);
+}
+
+
+
+#Cookie{
+  font-family: 'Festive', cursive;
+  color: rgb(235, 213, 21);
+
+}
+
+
+#submit{
+color: burlywood;
+}
+
+
+
+
+/* html */
+
+#one{
+  color: rgb(226, 198, 43);
+  font-family: 'Festive', cursive;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
